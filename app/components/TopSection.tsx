@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { linkData } from '../data/linkData';
 
 export default function TopSection() {
@@ -7,11 +8,11 @@ export default function TopSection() {
         <div className="w-full h-full bg-[url('/bg.png')] bg-cover bg-center blur-sm"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <img src="/logo.png" alt="Logo" className="w-80 md:w-96 mb-8 drop-shadow-lg" />
+        <Image src="/logo.png" alt="Logo" className="w-80 md:w-96 mb-8 drop-shadow-lg" width={320} height={240} />
         <div className="mt-8 flex gap-4">
           {linkData.map(link => (
             <a key={link.name} href={link.url} className="hover:opacity-80 transition bg-white p-2 rounded">
-              <img src={link.img} alt={link.name} className="w-12 h-12 object-contain" />
+              <Image src={link.img} alt={link.name} className="w-12 h-12 object-contain" width={48} height={48} />
             </a>
           ))}
         </div>

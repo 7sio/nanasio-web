@@ -55,13 +55,13 @@ export default function SpringPage() {
             <section id="gallery" className="py-24 px-6 bg-gray-50 text-center">
                 <h2 className="text-3xl font-semibold mb-8 tracking-wide text-gray-700">桜の記録</h2>
                 <div className="grid grid-cols-1 gap-6 max-w-6xl mx-auto">
-                    <img src="/images/colorful-clover/spring/photo.jpg" alt="春景色1" className="rounded-lg shadow-md" />
+                    <Image src="/images/colorful-clover/spring/photo.jpg" alt="春景色1" className="rounded-lg shadow-md" width={800} height={600} />
                 </div>
             </section>
 
             <section className="py-16 px-6 bg-white text-center">
                 <a href="/colorful-clover/summer" className="inline-block px-6 py-3 text-white bg-pink-400 hover:bg-pink-500 rounded-full shadow-lg transition duration-300">
-                    <img src="/images/colorful-clover/thumbnail-summer.jpg" alt="Summer" className="w-32 h-32 object-cover" />
+                    <Image src="/images/colorful-clover/thumbnail-summer.jpg" alt="Summer" className="w-32 h-32 object-cover" width={128} height={128} />
                 </a>
             </section>
         </>
