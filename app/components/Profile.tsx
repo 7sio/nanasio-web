@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ProfileSection() {
     return (
@@ -35,10 +36,12 @@ export default function ProfileSection() {
                 {/* 左：画像 */}
                 <div className="w-full md:w-[300px] shrink-0">
                     <div className="rounded-2xl shadow-lg overflow-hidden aspect-square">
-                        <img
+                        <Image
                             src="/nanasio.png"
-                            alt="About me"
+                            alt="Profile picture of Nanasio"
                             className="w-full h-full object-cover object-top"
+                            width={300}
+                            height={300}
                         />
                     </div>
                 </div>
@@ -112,6 +115,14 @@ export default function ProfileSection() {
                                 好きなゲーム
                             </span>
                             <span className="text-lg text-gray-800">ゼノブレイド2、スプラトゥーン2/3、ひぐらしのなく頃に、Omegaの視界</span>
+                        </div>
+
+                        {/* 好きなもの */}
+                        <div className="flex items-center gap-4">
+                            <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
+                                好きなもの
+                            </span>
+                            <span className="text-lg text-gray-800">青い海、青い空、洗礼されたシンプル</span>
                         </div>
 
                         {/* StrengthsFinder セクション */}

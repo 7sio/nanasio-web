@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { newsData } from '../data/newsData';
 import { motion } from 'framer-motion';
 
@@ -41,10 +42,12 @@ const NewsSection = () => {
                   exit={{ opacity: 0 }}
                   onClick={() => setCurrentIndex(index)}
                 >
-                  <img
+                  <Image
                     src={news.image}
                     alt={news.alt}
                     className={`w-64 h-32 object-cover rounded shadow-md transition-opacity duration-300 ${index === currentIndex ? 'opacity-100 scale-105 ring-4 ring-blue-400' : 'opacity-60 hover:opacity-80'}`}
+                    width={256}
+                    height={128}
                   />
                   {index === currentIndex && (
                     <div className="absolute bottom-1 right-1 bg-blue-500 text-white text-xs px-2 py-0.5 rounded">

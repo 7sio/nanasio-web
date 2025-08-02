@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Modal from './Modal';
+import Image from 'next/image';
 import { galleryImages } from '../data/galleryData';
 import { motion } from 'framer-motion';
 
@@ -81,11 +82,13 @@ const GallerySection: React.FC = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-[4px] sm:gap-[6px] md:gap-[8px]">
           {images.map((image, index) => (
-            <img
+            <Image
               key={index}
               src={image.src}
               alt={`Thumbnail ${index + 1}`}
               className="w-[80px] sm:w-[90px] md:w-[168px] aspect-square object-cover cursor-pointer"
+              width={168}
+              height={168}
               onClick={() => openModal(image)}
             />
           ))}
@@ -101,12 +104,13 @@ const GallerySection: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative w-full flex justify-center items-center px-2 pt-6 sm:px-8 sm:pt-6 pb-2">
-                  <img
-                    src={selectedImage?.src || ''}
+                  <Image
+                    src={selectedImage.src || ''}
                     alt="Selected"
                     className="object-contain max-h-[calc(100vh-220px)] max-w-[calc(100%-2rem)] w-auto h-auto"
+                    width={800}
+                    height={600}
                   />
-
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
