@@ -20,7 +20,7 @@ export default function Home() {
       {/* Newsセクション */}
       <NewsSection />
 
-      {/* Introductionセクション */}
+      {/* Profileセクション */}
       <ProfileSection />
 
       {/* Storyセクション */}
