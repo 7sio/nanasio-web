@@ -21,6 +21,7 @@ export default function CharacterSection({ characters }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
+            aria-labelledby="character-heading"
         >
             <div className="absolute inset-0 z-0">
                 <div className="w-full h-full bg-[url('/bg_character-section.png')] bg-cover bg-center blur-sm"></div>
@@ -28,6 +29,7 @@ export default function CharacterSection({ characters }: Props) {
 
             <div className="relative z-10">
                 <h2
+                    id="character-heading"
                     className="text-4xl font-bold mb-10 text-pink-600"
                     style={{
                         textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',

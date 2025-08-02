@@ -5,10 +5,16 @@ import Image from 'next/image';
 import { newsData } from '../data/newsData';
 import { motion } from 'framer-motion';
 
+const VISIBLE_COUNT = 4;
+
 const NewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const memoizedNewsData = useMemo(() => newsData.slice(0, 4), []); // 上位4件のみ
+  const memoizedNewsData = useMemo(() => newsData.slice(0, VISIBLE_COUNT), []);
   const currentNews = memoizedNewsData[currentIndex];
+  const formatDate = (dateString: string) =>
+    new Intl.DateTimeFormat('ja-JP', {
+      dateStyle: 'medium',
+    }).format(new Date(dateString));
 
   return (
     <section id="news" className="relative scroll-mt-24 overflow-hidden">

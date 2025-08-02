@@ -132,47 +132,29 @@ export default function ProfileSection() {
                             </span>
 
                             {/* 横並びで5つの資質を表示 */}
-                            <div className="flex flex-wrap justify-start gap-3">
-                                {/* 戦略性 */}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
+                            <div role="list" className="flex flex-wrap justify-start gap-3">
+                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
                                     <span className="text-base">💡</span>
-                                    <span className="text-green-900 font-semibold">
-                                        戦略性（Strategic Thinking）
-                                    </span>
+                                    <span className="text-green-900 font-semibold">戦略性（Strategic Thinking）</span>
                                 </div>
-
-                                {/* 着想 */}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
+                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
                                     <span className="text-base">💭</span>
-                                    <span className="text-green-900 font-semibold">
-                                        着想（Strategic Thinking）
-                                    </span>
+                                    <span className="text-green-900 font-semibold">着想（Strategic Thinking）</span>
                                 </div>
-
-                                {/* 達成欲 */}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-purple-200 shadow-md rounded-lg min-w-[180px] text-sm">
+                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-purple-200 shadow-md rounded-lg min-w-[180px] text-sm">
                                     <span className="text-base">🎯</span>
-                                    <span className="text-purple-900 font-semibold">
-                                        達成欲（Executing）
-                                    </span>
+                                    <span className="text-purple-900 font-semibold">達成欲（Executing）</span>
                                 </div>
-
-                                {/* 学習欲 */}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">📘</span>
-                                    <span className="text-green-900 font-semibold">
-                                        学習欲（Strategic Thinking）
-                                    </span>
+                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-blue-200 shadow-md rounded-lg min-w-[180px] text-sm">
+                                    <span className="text-base">📥</span>
+                                    <span className="text-blue-900 font-semibold">収集心（Strategic Thinking）</span>
                                 </div>
-
-                                {/* 未来志向 */}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">🔮</span>
-                                    <span className="text-green-900 font-semibold">
-                                        未来志向（Strategic Thinking）
-                                    </span>
+                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-red-200 shadow-md rounded-lg min-w-[180px] text-sm">
+                                    <span className="text-base">🧬</span>
+                                    <span className="text-red-900 font-semibold">個別化（Relationship Building）</span>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>

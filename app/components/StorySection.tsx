@@ -10,14 +10,18 @@ export default function StorySection({ data }: Props) {
     return (
         <motion.section
             id="story"
-            className="relative text-black px-6 sm:px-12 md:px-20 py-10 scroll-mt-24 overflow-hidden"
+            aria-labelledby="story-heading"
+            className="relative text-black px-6 sm:px-12 md:px-20 py-20 scroll-mt-24 overflow-hidden"
+            style={{ position: 'relative' }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
         >
-            {/* 背景ぼかし画像レイヤー */}
-            <div className="absolute inset-0 z-0 bg-[url('/bg_story-section.jpg')] bg-cover bg-center filter blur-sm scale-105" />
+            {/* 背景レイヤーに sticky を付与 */}
+            <div className="absolute inset-0 z-0">
+                <div className="w-full h-full bg-[url('/bg_story-section.jpg')] bg-cover bg-center blur-sm sticky top-0" />
+            </div>
 
             {/* 前面コンテンツ */}
             <div className="relative z-10">
