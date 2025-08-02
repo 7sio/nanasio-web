@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -31,13 +32,13 @@ export default function Navbar() {
                     ☰
                 </button>
                 <ul className={`flex-col md:flex-row md:flex gap-6 text-sm font-medium text-gray-700 ${menuOpen ? 'flex' : 'hidden'}`}>
-                    <li><a href="/#top" className="hover:text-pink-500 transition">Top</a></li>
-                    <li><a href="/#news" className="hover:text-pink-500 transition">News</a></li>
-                    <li><a href="/#profile" className="hover:text-pink-500 transition">Profile</a></li>
-                    <li><a href="/#story" className="hover:text-pink-500 transition">Story</a></li>
-                    <li><a href="/#character" className="hover:text-pink-500 transition">Character</a></li>
-                    <li><a href="/#gallery" className="hover:text-pink-500 transition">Gallery</a></li>
-                    <li><a href="/#special" className="hover:text-pink-500 transition">Special</a></li>
+                    <li><Link href="/#top" className="hover:text-pink-500 transition">Top</Link></li>
+                    <li><Link href="/#news" className="hover:text-pink-500 transition">News</Link></li>
+                    <li><Link href="/#profile" className="hover:text-pink-500 transition">Profile</Link></li>
+                    <li><Link href="/#story" className="hover:text-pink-500 transition">Story</Link></li>
+                    <li><Link href="/#character" className="hover:text-pink-500 transition">Character</Link></li>
+                    <li><Link href="/#gallery" className="hover:text-pink-500 transition">Gallery</Link></li>
+                    <li><Link href="/#special" className="hover:text-pink-500 transition">Special</Link></li>
                 </ul>
             </nav>
         </header>
