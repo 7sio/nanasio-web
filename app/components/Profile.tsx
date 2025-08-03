@@ -14,7 +14,7 @@ export default function ProfileSection() {
             viewport={{ once: true }}
         >
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-[url('/bg_profile-section.jpg')] bg-cover bg-center blur-sm" />
+                <div className="w-full h-full bg-[url('/bg_profile-section.webp')] bg-cover bg-center blur-sm" />
             </div>
 
             <div className="relative z-10 text-center mb-10">
@@ -37,7 +37,7 @@ export default function ProfileSection() {
                 <div className="w-full md:w-[300px] shrink-0">
                     <div className="rounded-2xl shadow-lg overflow-hidden aspect-square">
                         <Image
-                            src="/nanasio.png"
+                            src="/nanasio.webp"
                             alt="Profile picture of Nanasio"
                             className="w-full h-full object-cover object-top"
                             width={300}

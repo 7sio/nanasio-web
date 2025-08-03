@@ -64,7 +64,7 @@ const GallerySection: React.FC = () => {
       viewport={{ once: true }}
     >
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-[url('/bg_gallery-section.png')] bg-cover bg-center blur-sm"></div>
+        <div className="w-full h-full bg-[url('/bg_gallery-section.webp')] bg-cover bg-center blur-sm"></div>
       </div>
       <div className="relative z-10">
         <div className="relative z-10 text-center mb-10">

@@ -22,7 +22,7 @@ export default function StorySection({ data }: Props) {
             {/* 固定背景 */}
             <div className="absolute inset-0 z-0">
                 <motion.div
-                    className="w-full h-full bg-[url('/bg_story-section.jpg')] bg-cover bg-center blur-sm sticky top-0"
+                    className="w-full h-full bg-[url('/bg_story-section.webp')] bg-cover bg-center blur-sm sticky top-0"
                     style={{ opacity }}
                 />
             </div>

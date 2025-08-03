@@ -14,7 +14,7 @@ export default function SpecialSection({ data }: Props) {
             className="relative min-h-screen text-gray-900 p-10 scroll-mt-24 overflow-hidden"
         >
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-[url('/bg_special-section.png')] bg-cover bg-center blur-sm"></div>
+                <div className="w-full h-full bg-[url('/bg_special-section.webp')] bg-cover bg-center blur-sm"></div>
             </div>
 
             <div className="relative z-0">

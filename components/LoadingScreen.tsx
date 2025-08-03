@@ -24,7 +24,7 @@ export default function LoadingScreen() {
                 <motion.div
                     className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none"
                     style={{
-                        backgroundImage: "url('/nanasio-loading.png')",
+                        backgroundImage: "url('/nanasio-loading.webp')",
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         backgroundSize: '20% auto',

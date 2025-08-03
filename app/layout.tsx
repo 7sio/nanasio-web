@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'nanasioのサイトです',
     images: [
       {
-        url: 'https://www.nanasio.net/ogp.jpg',
+        url: 'https://www.nanasio.net/ogp.webp',
         width: 1200,
         height: 630,
         alt: 'nanature',

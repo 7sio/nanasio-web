@@ -4,7 +4,7 @@ export const newsData: NewsItem[] = [
     {
         id: 1,
         date: '2026-01-01',
-        image: '/news1.jpg',
+        image: '/news1.webp',
         alt: '初投稿',
         title: '初投稿',
         description: 'サイト開設！',
@@ -13,7 +13,7 @@ export const newsData: NewsItem[] = [
     {
         id: 2,
         date: '2025-07-15',
-        image: '/news2.jpg',
+        image: '/news2.webp',
         alt: 'Webリニューアル',
         title: 'Webサイト全面リニューアル',
         description: 'デザイン・機能を一新しました。',
@@ -22,7 +22,7 @@ export const newsData: NewsItem[] = [
     {
         id: 3,
         date: '2025-07-28',
-        image: '/news3.jpg',
+        image: '/news3.webp',
         alt: 'ギャラリー更新',
         title: 'ギャラリー更新',
         description: '夏イベントのスクリーンショットを多数追加しました。',

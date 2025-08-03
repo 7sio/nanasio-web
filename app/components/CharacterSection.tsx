@@ -24,7 +24,7 @@ export default function CharacterSection({ characters }: Props) {
             aria-labelledby="character-heading"
         >
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-[url('/bg_character-section.png')] bg-cover bg-center blur-sm"></div>
+                <div className="w-full h-full bg-[url('/bg_character-section.webp')] bg-cover bg-center blur-sm"></div>
             </div>
 
             <div className="relative z-10">
