@@ -1,5 +1,5 @@
 import NewsSection from './components/NewsSection'
-import ProfileSection from './components/Profile'
+import ProfileSection from './components/ProfileSection'
 import StorySection from './components/StorySection'
 import CharacterSection from './components/CharacterSection'
 import Navbar from './components/Navbar'
