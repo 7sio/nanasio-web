@@ -1,91 +1,77 @@
-'use client'
-import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+'use client';
 import { newsData } from '../data/newsData';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const VISIBLE_COUNT = 4;
-
-const NewsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const memoizedNewsData = useMemo(() => newsData.slice(0, VISIBLE_COUNT), []);
-  const currentNews = memoizedNewsData[currentIndex];
-  const formatDate = (dateString: string) =>
-    new Intl.DateTimeFormat('ja-JP', {
-      dateStyle: 'medium',
-    }).format(new Date(dateString));
+export default function NewsSection() {
+  // 最新順にソート & 上位3件を抽出
+  const sortedNews = [...newsData]
+    .sort((a, b) => b.id - a.id) // ← date ではなく id を基準にソート
+    .slice(0, 3);
 
   return (
-    <section id="news" className="relative scroll-mt-24 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-[url('/bg_news-section.jpg')] bg-cover bg-center blur-sm"></div>
-      </div>
+    <motion.section
+      id="news"
+      aria-labelledby="news-heading"
+      className="relative py-20 px-6 text-center scroll-mt-24 overflow-hidden bg-white"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
+      <h2
+        id="news-heading"
+        className="text-4xl font-bold mb-10"
+        style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.2)' }}
+      >
+        News
+      </h2>
 
-      <div className="relative z-10">
-        <div className="relative z-10 text-center mb-10">
-          <h2
-            className="text-4xl font-bold mb-10 text-pink-600"
-            style={{
-              textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',
-              fontFamily: '"Bodoni MT", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif',
-              fontWeight: '100',
-              letterSpacing: '0.3em',
-            }}
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {sortedNews.map((item, index) => (
+          <motion.div
+            key={item.id}
+            className="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
           >
-            News
-          </h2>
-        </div>
-
-        <div className="carousel flex flex-col items-center">
-          <div className="flex justify-center gap-4">
-            {memoizedNewsData.map((news, index) => (
-              <Link href={news.link} key={`news-${news.id}`}>
-                <motion.div
-                  className="relative cursor-pointer transition-all duration-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setCurrentIndex(index)}
-                >
+            <Link href={item.link} passHref>
+              <div className="cursor-pointer">
+                <div className="relative w-full h-48">
                   <Image
-                    src={news.image}
-                    alt={news.alt}
-                    className={`w-64 h-32 object-cover rounded shadow-md transition-opacity duration-300 ${index === currentIndex ? 'opacity-100 scale-105 ring-4 ring-blue-400' : 'opacity-60 hover:opacity-80'}`}
-                    width={256}
-                    height={128}
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  {index === currentIndex && (
-                    <div className="absolute bottom-1 right-1 bg-blue-500 text-white text-xs px-2 py-0.5 rounded">
-                      SELECTED
-                    </div>
-                  )}
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="carousel-indicators flex justify-center mt-4 mb-4">
-            {memoizedNewsData.map((news, index) => (
-              <div
-                key={`indicator-${news.id}`}
-                className={`w-2 h-2 rounded-full mx-1 cursor-pointer ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'}`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <Link
-            href="/news"
-            className="mt-4 mb-4 inline-block px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition"
-          >
-            View more
-          </Link>
-        </div>
+                </div>
+                <div className="p-4 text-left">
+                  <p className="text-xs text-gray-500 mb-1">
+                    {new Date(item.date).toLocaleDateString('ja-JP', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    })}
+                  </p>
+                  <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
+                  <p className="text-sm text-gray-700 mt-1">{item.description}</p>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
 
-export default NewsSection;
+      {/* 「もっと見る」リンク */}
+      <div className="mt-10">
+        <Link href="/news" className="text-blue-600 hover:underline text-sm">
+          → もっと見る
+        </Link>
+      </div>
+    </motion.section>
+  );
+}

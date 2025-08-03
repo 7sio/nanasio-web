@@ -1,4 +1,8 @@
+export type StoryItem = {
+    title: string;
+    content: string;
+};
+
 export type StorySectionData = {
-    title: string
-    description: string
-}
+    items: StoryItem[];
+};

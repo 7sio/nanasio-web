@@ -1,47 +1,31 @@
-export const newsData = [
+import type { NewsItem } from '../types/news';
+
+export const newsData: NewsItem[] = [
     {
         id: 1,
-        date: '2024-07-15',
-        image: '/images/news/news1.png',
-        alt: 'ニュース1',
-        title: 'ニュースタイトル1',
-        description: 'ニュースの説明1',
-        link: '/timeline'
+        date: '2026-01-01',
+        image: '/news1.jpg',
+        alt: '初投稿',
+        title: '初投稿',
+        description: 'サイト開設！',
+        link: '/news/first-post',
     },
     {
         id: 2,
-        date: '2024-06-20',
-        image: '/images/news/news2.jpg',
-        alt: 'ニュース2',
-        title: 'ニュースタイトル2',
-        description: 'ニュースの説明2',
-        link: '/C104'
+        date: '2025-07-15',
+        image: '/news2.jpg',
+        alt: 'Webリニューアル',
+        title: 'Webサイト全面リニューアル',
+        description: 'デザイン・機能を一新しました。',
+        link: '/news/site-renewal',
     },
     {
         id: 3,
-        date: '2024-05-10',
-        image: '/images/news/news3.jpg',
-        alt: 'ニュース3',
-        title: 'ニュースタイトル3',
-        description: 'ニュースの説明3',
-        link: '/C105'
+        date: '2025-07-28',
+        image: '/news3.jpg',
+        alt: 'ギャラリー更新',
+        title: 'ギャラリー更新',
+        description: '夏イベントのスクリーンショットを多数追加しました。',
+        link: '/news/gallery-update',
     },
-    {
-        id: 4,
-        date: '2024-04-01',
-        image: '/images/news/news4.jpg',
-        alt: 'ニュース4',
-        title: 'ニュースタイトル4',
-        description: 'ニュースの説明4',
-        link: '/colorful-clover/winter'
-    },
-    {
-        id: 5,
-        date: '2024-03-15',
-        image: '/images/news/news5.jpg',
-        alt: 'ニュース5',
-        title: 'ニュースタイトル5',
-        description: 'ニュースの説明5',
-        link: '/colorful-clover'
-    }
 ];
