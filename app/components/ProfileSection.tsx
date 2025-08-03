@@ -2,11 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { profile } from '../data/profileData';
 
 export default function ProfileSection() {
     return (
         <motion.section
             id="profile"
+            aria-labelledby="profile-heading"
             className="relative px-6 sm:px-12 md:px-20 py-16 text-black scroll-mt-24 overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -17,8 +19,10 @@ export default function ProfileSection() {
                 <div className="w-full h-full bg-[url('/bg_profile-section.webp')] bg-cover bg-center blur-sm" />
             </div>
 
+            {/* セクションタイトル */}
             <div className="relative z-10 text-center mb-10">
                 <h2
+                    id="profile-heading"
                     className="text-4xl font-bold mb-10 text-pink-600"
                     style={{
                         textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',
@@ -37,7 +41,7 @@ export default function ProfileSection() {
                 <div className="w-full md:w-[300px] shrink-0">
                     <div className="rounded-2xl shadow-lg overflow-hidden aspect-square">
                         <Image
-                            src="/nanasio.webp"
+                            src={profile.image}
                             alt="Profile picture of Nanasio"
                             className="w-full h-full object-cover object-top"
                             width={300}
@@ -82,7 +86,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 誕生日
                             </span>
-                            <span className="text-lg text-gray-800">2月18日</span>
+                            <span className="text-lg text-gray-800">{profile.birthDate}</span>
                         </div>
 
                         {/* 趣味 */}
@@ -90,7 +94,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 趣味
                             </span>
-                            <span className="text-lg text-gray-800">ホラー・伝奇作品鑑賞、写真撮影、ワールド探索、お絵かき</span>
+                            <span className="text-lg text-gray-800">{profile.hobbies.join("、")}</span>
                         </div>
 
                         {/* 特徴 */}
@@ -98,7 +102,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 特徴
                             </span>
-                            <span className="text-lg text-gray-800">白・銀髪、赤目</span>
+                            <span className="text-lg text-gray-800">{profile.features.join("、")}</span>
                         </div>
 
                         {/* 好きな食べ物 */}
@@ -106,7 +110,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 好きな食べ物
                             </span>
-                            <span className="text-lg text-gray-800">モンブラン、寿司</span>
+                            <span className="text-lg text-gray-800">{profile.favoriteFoods.join("、")}</span>
                         </div>
 
                         {/* 好きなゲーム */}
@@ -114,7 +118,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 好きなゲーム
                             </span>
-                            <span className="text-lg text-gray-800">ゼノブレイド2、スプラトゥーン2/3、ひぐらしのなく頃に、Omegaの視界</span>
+                            <span className="text-lg text-gray-800">{profile.favoriteGames.join("、")}</span>
                         </div>
 
                         {/* 好きなもの */}
@@ -122,7 +126,7 @@ export default function ProfileSection() {
                             <span className="inline-block min-w-[8rem] px-3 py-1 bg-gray-400 rounded-full font-semibold text-gray-700 text-sm text-center">
                                 好きなもの
                             </span>
-                            <span className="text-lg text-gray-800">青い海、青い空、洗礼されたシンプル</span>
+                            <span className="text-lg text-gray-800">{profile.favoriteThings.join("、")}</span>
                         </div>
 
                         {/* StrengthsFinder セクション */}
@@ -132,27 +136,19 @@ export default function ProfileSection() {
                             </span>
 
                             {/* 横並びで5つの資質を表示 */}
-                            <div role="list" className="flex flex-wrap justify-start gap-3">
-                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">💡</span>
-                                    <span className="text-green-900 font-semibold">戦略性（Strategic Thinking）</span>
-                                </div>
-                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-green-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">💭</span>
-                                    <span className="text-green-900 font-semibold">着想（Strategic Thinking）</span>
-                                </div>
-                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-purple-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">🎯</span>
-                                    <span className="text-purple-900 font-semibold">達成欲（Executing）</span>
-                                </div>
-                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-blue-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">📥</span>
-                                    <span className="text-blue-900 font-semibold">収集心（Strategic Thinking）</span>
-                                </div>
-                                <div role="listitem" className="flex items-center gap-2 px-3 py-2 bg-white border border-red-200 shadow-md rounded-lg min-w-[180px] text-sm">
-                                    <span className="text-base">🧬</span>
-                                    <span className="text-red-900 font-semibold">個別化（Relationship Building）</span>
-                                </div>
+                            <div
+                                role="list"
+                                className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2 sm:gap-4 items-center"
+                            >
+                                {profile.strengths.map((strength, index) => (
+                                    <div
+                                        key={index}
+                                        role="listitem"
+                                        className="bg-white bg-opacity-70 rounded-lg px-4 py-2 shadow text-sm font-semibold"
+                                    >
+                                        {strength}
+                                    </div>
+                                ))}
                             </div>
 
                         </div>
