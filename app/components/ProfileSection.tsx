@@ -39,7 +39,13 @@ export default function ProfileSection() {
             <div className="relative z-10 mx-auto max-w-6xl flex flex-col md:flex-row items-start justify-center gap-10">
                 {/* 左：画像 */}
                 <div className="w-full md:w-[300px] shrink-0">
-                    <div className="rounded-2xl shadow-lg overflow-hidden aspect-square">
+                    <motion.div
+                        className="rounded-2xl shadow-lg overflow-hidden aspect-square"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
                         <Image
                             src={profile.image}
                             alt="Profile picture of Nanasio"
@@ -47,11 +53,16 @@ export default function ProfileSection() {
                             width={300}
                             height={300}
                         />
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* 右： */}
-                <div className="flex-1 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg text-gray-800 space-y-6 max-w-3xl">
+                <motion.div
+                    className="flex-1 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg text-gray-800 space-y-6 max-w-3xl"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+                    viewport={{ once: true }}>
                     {/* 🔹 名前と英語表記 */}
                     <div className="mb-4 border-b border-gray-300 pb-4">
                         <div className="flex items-center gap-3">
@@ -141,20 +152,24 @@ export default function ProfileSection() {
                                 className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2 sm:gap-4 items-center"
                             >
                                 {profile.strengths.map((strength, index) => (
-                                    <div
+                                    <motion.div
                                         key={index}
                                         role="listitem"
                                         className="bg-white bg-opacity-70 rounded-lg px-4 py-2 shadow text-sm font-semibold"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                                        viewport={{ once: true }}
                                     >
                                         {strength}
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
 
                         </div>
 
                     </div>
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );
