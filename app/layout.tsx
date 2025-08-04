@@ -16,22 +16,36 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: '%s | nanature',
-    template: 'nanature',
+    default: '%s | ななのーと',
+    template: 'ななのーと',
   },
   description: 'nanasio',
-  metadataBase: new URL('http://www.nanasio.net/'),
+  metadataBase: new URL('http://www.nanasio.com/'),
   openGraph: {
-    title: 'nanature',
-    description: 'nanasioのサイトです',
+    title: 'ななのーと',
+    description: 'nanasioのポートフォリオサイト',
+    siteName: 'ななのーと',
+    locale: 'ja_JP',
+    type: 'website',
     images: [
       {
-        url: 'https://www.nanasio.net/ogp.webp',
+        url: 'https://www.nanasio.com/ogp.webp',
         width: 1200,
         height: 630,
-        alt: 'nanature',
+        alt: 'ななのーと',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@nanasio',
+    creator: '@nanasio',
+    title: 'ななのーと',
+    description: 'nanasioのポートフォリオサイト',
+    images: ['https://www.nanasio.com/ogp.webp'],
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
