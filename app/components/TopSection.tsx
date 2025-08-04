@@ -1,9 +1,18 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { linkData } from '../data/linkData';
 
 export default function TopSection() {
   return (
-    <section id="top-section" className="relative h-screen text-white scroll-mt-24 overflow-hidden">
+    <motion.section
+      id="top-section"
+      className="relative h-screen text-white scroll-mt-24 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-[url('/bg.webp')] bg-cover bg-center blur-sm"></div>
       </div>
@@ -17,6 +26,6 @@ export default function TopSection() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
