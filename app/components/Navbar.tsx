@@ -27,7 +27,9 @@ export default function Navbar() {
     return (
         <header id="navbar" className="w-full bg-white/80 backdrop-blur z-50 shadow fixed top-0">
             <nav className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-                <div className="text-xl font-bold">ななしお</div>
+                <Link
+                    href={"/"}
+                    className="text-xl font-bold">ななのーと</Link>
                 <button
                     className="text-2xl md:hidden focus:outline-none"
                     onClick={() => setMenuOpen(!menuOpen)}
