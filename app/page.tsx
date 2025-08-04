@@ -1,12 +1,11 @@
 import NewsSection from './components/NewsSection'
 import ProfileSection from './components/ProfileSection'
-import StorySection from './components/StorySection'
+import ContentsSection from './components/ContentsSection'
 import CharacterSection from './components/CharacterSection'
 import Navbar from './components/Navbar'
 import GallerySection from './components/GallerySection'
 import SpecialSection from './components/SpecialSection'
 import TopSection from './components/TopSection'
-import { storyData } from './data/storyData'
 import { characters } from './data/characterData'
 import { specialData } from './data/specialData'
 
@@ -23,11 +22,11 @@ export default function Home() {
       {/* Profileセクション */}
       <ProfileSection />
 
-      {/* Storyセクション */}
-      <StorySection data={storyData} />
-
       {/* Characterセクション */}
       <CharacterSection characters={characters} />
+
+      {/* Contensセクション */}
+      <ContentsSection />
 
       {/* Galleryセクション */}
       <GallerySection />

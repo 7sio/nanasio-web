@@ -29,7 +29,7 @@ export default function CharacterSection({ characters }: Props) {
 
             <div className="relative z-10">
                 <motion.h2
-                    id="story-heading"
+                    id="character-heading"
                     className="text-4xl font-bold text-pink-600 mb-10 text-center"
                     style={{
                         textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',

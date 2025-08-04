@@ -69,7 +69,7 @@ const GallerySection: React.FC = () => {
       <div className="relative z-10">
         <div className="relative z-10 text-center mb-10">
           <motion.h2
-            id="story-heading"
+            id="gallery-heading"
             className="text-4xl font-bold text-pink-600 mb-10 text-center"
             style={{
               textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',
