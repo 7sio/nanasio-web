@@ -19,17 +19,21 @@ export default function SpecialSection({ data }: Props) {
 
             <div className="relative z-0">
                 <div className="relative z-10 text-center mb-10">
-                    <h2
-                        className="text-4xl font-bold mb-10 text-pink-600"
+                    <motion.h2
+                        id="story-heading"
+                        className="text-4xl font-bold text-pink-600 mb-10 text-center"
                         style={{
                             textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',
                             fontFamily: '"Bodoni MT", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif',
                             fontWeight: '100',
                             letterSpacing: '0.3em',
                         }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
                     >
                         Special
-                    </h2>
+                    </motion.h2>
                 </div>
                 <div className="text-center">
                     <p>{data.description}</p>

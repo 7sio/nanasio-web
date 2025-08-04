@@ -20,13 +20,21 @@ export default function NewsSection() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <h2
-        id="news-heading"
-        className="text-4xl font-bold mb-10"
-        style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.2)' }}
+      <motion.h2
+        id="story-heading"
+        className="text-4xl font-bold text-pink-600 mb-10 text-center"
+        style={{
+          textShadow: '2px 2px 4px rgba(255, 255, 255, 0.5)',
+          fontFamily: '"Bodoni MT", "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif',
+          fontWeight: '100',
+          letterSpacing: '0.3em',
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         News
-      </h2>
+      </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {sortedNews.map((item, index) => (

@@ -10,20 +10,19 @@ type Props = {
 export default function StorySection({ data }: Props) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
-    const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    // const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
     return (
         <section
             ref={ref}
             id="story"
             aria-labelledby="story-heading"
-            className="relative text-black px-6 sm:px-12 md:px-20 py-40 scroll-mt-24 overflow-hidden h-[200vh]"
+            className="relative text-black px-6 sm:px-12 md:px-20 py-40 scroll-mt-24 overflow-hidden h-[100vh]"
         >
             {/* 固定背景 */}
             <div className="absolute inset-0 z-0">
                 <motion.div
                     className="w-full h-full bg-[url('/bg_story-section.webp')] bg-cover bg-center blur-sm sticky top-0"
-                    style={{ opacity }}
                 />
             </div>
 
@@ -42,7 +41,7 @@ export default function StorySection({ data }: Props) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    STORY
+                    Story
                 </motion.h2>
 
                 <div className="space-y-12">
