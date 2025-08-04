@@ -77,7 +77,7 @@ export default function NewsSection() {
       {/* 「もっと見る」リンク */}
       <div className="mt-10">
         <Link href="/news" className="text-blue-600 hover:underline text-sm">
-          → もっと見る
+          View More
         </Link>
       </div>
     </motion.section>
